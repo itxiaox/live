@@ -1,4 +1,4 @@
-﻿(function(window){
+(function(window){
 
     function random(min, max) {
         return min + Math.floor(Math.random() * (max - min + 1));
@@ -76,7 +76,7 @@
         this.tree = tree;
 
         var scale = scale || 1
-        var color = color || '#FF0000';
+        var color = color || '#FFFF00';
 
         this.heart = {
             point  : point,
@@ -237,7 +237,7 @@
             var x = seed.x || this.width / 2;
             var y = seed.y || this.height / 2;
             var point = new Point(x, y);
-            var color = seed.color || '#FF0000';
+            var color = seed.color || '#FFff00';  //表白字字体颜色
             var scale = seed.scale || 1;
 
             this.seed = new Seed(this, point, scale, color);
@@ -348,7 +348,8 @@
             while (true) {
                 x = random(20, width - 20);
                 y = random(20, height - 20);
-                if (inheart(x - width / 2, height - (height - 40) / 2 - y, radius)) {
+                if (inheart(x - width / 2,
+				 height - (height - 40) / 2 - y, radius)) {
                     return new Bloom(this, new Point(x, y), figure, color, alpha, angle, scale, place, speed);
                 }
             }
